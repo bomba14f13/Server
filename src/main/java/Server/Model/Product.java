@@ -13,11 +13,15 @@ public class Product {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="category_id")
-    private Category category;
+    @JoinColumn(name="folder_id")
+    private Folder folder;
 
     public Product() {
 
+    }
+
+    public Product(String name) {
+        this.name = name;
     }
 
     public long getId() {
@@ -28,8 +32,8 @@ public class Product {
         return name;
     }
 
-    public Category getCategory() {
-        return category;
+    public Folder getFolder() {
+        return folder;
     }
 
     public void setId(long id) {
@@ -40,7 +44,7 @@ public class Product {
         this.name = name;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setFolder(Folder folder) {
+        this.folder = folder;
     }
 }
